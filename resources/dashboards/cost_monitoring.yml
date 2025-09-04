@@ -2,7 +2,7 @@ resources:
   dashboards:
     cost_monitoring_dashboard:
       display_name: "Cost Monitoring Dashboard"
-      file_path: ../src/dashboards/cost_monitoring/nyc_taxi_trip_analysis.lvdash.json
+      file_path: ../src/dashboards/cost_monitoring/cost_monitoring.lvdash.json
       warehouse_id: ${var.warehouse_id}
 
       # If "embed_credentials" is set to true, the bundle deployment identity's credentials
