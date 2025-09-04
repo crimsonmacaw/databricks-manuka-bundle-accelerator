@@ -1,0 +1,11 @@
+# Variable declarations. These variables are assigned in the dev/prod targets in databricks.yml.
+variables:
+  warehouse_id:
+    description: The warehouse to use
+  catalog:
+    description: The catalog to use
+  schema:
+    description: The schema to use
+  webhook_id:
+    description: The webhook for notifications (e.g. teams, slack)
+  
