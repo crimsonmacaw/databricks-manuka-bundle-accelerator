@@ -1,1 +1,14 @@
 .ruff_cache
+# local bundle files
+**/.databricks/*
+.idea
+.vscode
+mlruns
+*.db
+.dbx
+# Exclude local environment directory
+venv
+# Exclude local distribution/packaging directories
+*.egg-info/
+build
+dist
