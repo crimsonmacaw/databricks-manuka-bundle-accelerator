@@ -10,8 +10,8 @@ resources:
           interval: 1
           unit: DAYS
 
-      email_notifications:
-        on_failure: ${var.notifications}
+      webhook_notifications:
+        on_failure: ${var.webhook_id}
 
       tasks:
         - task_key: refresh_pipeline

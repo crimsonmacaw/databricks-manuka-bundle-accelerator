@@ -19,12 +19,12 @@ resources:
         - task_key: batch_inference_job
           <<: *new_cluster
           notebook_task:
-            notebook_path: ../deployment/batch_inference/notebooks/BatchInference.py
+            notebook_path: ../../src/mlops/deployment/batch_inference/notebooks/BatchInference.py
             base_parameters:
               env: ${bundle.target}
               input_table_name: taxi_scoring_sample  # TODO: create input table for inference
               output_table_name: ${bundle.target}.my-mlops-project.predictions
-              model_name: ${bundle.target}.my-mlops-project.${var.model_name}
+              model_name: dbx-test-model
               # git source information of current ML resource deployment. It will be persisted as part of the workflow run
               git_source_info: url:${bundle.git.origin_url}; branch:${bundle.git.branch}; commit:${bundle.git.commit}
 

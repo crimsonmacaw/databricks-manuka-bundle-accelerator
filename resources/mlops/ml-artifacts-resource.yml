@@ -47,7 +47,7 @@ grants: &grants
 resources:
   registered_models:
       model:
-        name: ${var.model_name}
+        name: dbx-test-model
         catalog_name: ${bundle.target}
         schema_name: my-mlops-project     
         <<: *grants
@@ -57,6 +57,6 @@ resources:
 
   experiments:
     experiment:
-      name: ${var.experiment_name}
+      name: dbx-test-model-experiment
       <<: *permissions
       description: MLflow Experiment used to track runs for mlops_stacks project.

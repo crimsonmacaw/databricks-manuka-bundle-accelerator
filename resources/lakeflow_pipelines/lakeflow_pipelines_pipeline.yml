@@ -6,7 +6,7 @@ resources:
       channel: "PREVIEW"
       catalog: ${var.catalog}
       schema: ${var.schema}
-      root_path: "../src/lakeflow_pipelines"
+      root_path: "../../src/lakeflow_pipelines"
       libraries:
         - glob:
             include: transformations/**

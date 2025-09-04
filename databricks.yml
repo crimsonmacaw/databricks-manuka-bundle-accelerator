@@ -22,6 +22,7 @@ targets:
       warehouse_id: abcdef1234567890
       catalog: catalog
       schema: ${workspace.current_user.short_name}
+      webhook_id: ""
 
   prod:
     mode: production

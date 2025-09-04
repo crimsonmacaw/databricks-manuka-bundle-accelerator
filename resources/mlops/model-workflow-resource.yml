@@ -22,13 +22,13 @@ resources:
         - task_key: Train
           job_cluster_key: model_training_job_cluster
           notebook_task:
-            notebook_path: ../training/notebooks/Train.py
+            notebook_path: ../../src/mlops/training/notebooks/Train.py
             base_parameters:
               env: ${bundle.target}
               # TODO: Update training_data_path
               training_data_path: /databricks-datasets/nyctaxi-with-zipcodes/subsampled
-              experiment_name: ${var.experiment_name}
-              model_name: ${bundle.target}.my-mlops-project.${var.model_name}
+              experiment_name: dbx-test-model-experiment
+              model_name: dbx-test-model
               # git source information of current ML resource deployment. It will be persisted as part of the workflow run
               git_source_info: url:${bundle.git.origin_url}; branch:${bundle.git.branch}; commit:${bundle.git.commit}
           
@@ -37,9 +37,9 @@ resources:
           depends_on:
             - task_key: Train
           notebook_task:
-            notebook_path: ../validation/notebooks/ModelValidation.py
+            notebook_path: ../../src/mlops/validation/notebooks/ModelValidation.py
             base_parameters:
-              experiment_name: ${var.experiment_name}
+              experiment_name: dbx-test-model-experiment
               # The `run_mode` defines whether model validation is enabled or not.
               # It can be one of the three values:
               # `disabled` : Do not run the model validation notebook.
@@ -80,7 +80,7 @@ resources:
           depends_on:
             - task_key: ModelValidation
           notebook_task:
-            notebook_path: ../deployment/model_deployment/notebooks/ModelDeployment.py
+            notebook_path: ../../src/mlops/deployment/model_deployment/notebooks/ModelDeployment.py
             base_parameters:
               env: ${bundle.target}
               # git source information of current ML resource deployment. It will be persisted as part of the workflow run

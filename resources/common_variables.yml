@@ -7,5 +7,5 @@ variables:
   schema:
     description: The schema to use
   webhook_id:
-    description: The webhook for notifications (e.g. teams, slack)
+    description: The webhook for notifications (e.g. teams, slack)  
   
